@@ -64,7 +64,7 @@ const Header = () => {
               {auth.auth.isAuthenticated ? (
                 <>
                   <Link className="mr-2" to="/profile">
-                    {auth.customer.current.fullName}
+                    {auth.customer?.current?.fullName}
                   </Link>
                   |
                   <Link onClick={clickLogout} className="mr-2 ml-2" >
