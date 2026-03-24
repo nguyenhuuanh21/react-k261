@@ -1,0 +1,21 @@
+import Http from "./Http";
+
+export const getProducts = (config) => Http.get('/products', config);
+export const getProductDetails = (id) => Http.get(`/products/${id}`);
+export const getCategories = () => Http.get('/categories');
+export const getCategoryDetails = (id) => Http.get(`/categories/${id}`);
+export const getProductsByCategory = (id, config) => Http.get(`/categories/${id}/products`, config);
+export const getCommentsByProduct = (id, config) => Http.get(`/products/${id}/comments`, config);
+export const createComment = (id, data) => Http.post(`/products/${id}/comments`, data);
+export const createOrder=(data)=>Http.post('/customers/orders',data);
+export const getBanners=(config)=>Http.get('/banners',config);
+export const getSliders=(config)=>Http.get('/sliders',config);
+export const registerCustomer=(data)=>Http.post('/auth/customers/register',data);
+export const loginCustomer=(data)=>Http.post('/auth/customers/login',data);
+export const getCustomerProfile=()=>Http.get('/auth/customers/me');
+export const getOrderList=(config)=>Http.get('/customers/orders', config);
+export const getOrderDetails=(id)=>Http.get(`/customers/orders/${id}`);
+export const CancelOrder=(id)=>Http.patch(`/customers/orders/${id}/cancel`);
+export const logoutCustomer=()=>Http.post('/auth/customers/logout');
+export const refreshToken=()=>Http.post('/auth/customers/refresh');
+export const updateCustomer = (data) => Http.put(`/customers/me`, data);
